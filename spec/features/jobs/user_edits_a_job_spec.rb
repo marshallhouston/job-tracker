@@ -3,7 +3,8 @@ require 'rails_helper'
 describe "user edits an existing job" do
   before :each do
     @company = Company.create!(name: 'REI')
-    @job = @company.jobs.create!(title: 'ski instructor', description: 'teach folks to ski', level_of_interest: 3, city: 'Breckenridge')
+    category = Category.create!(title: 'Outdoors')
+    @job = @company.jobs.create!(title: 'ski instructor', description: 'teach folks to ski', level_of_interest: 3, city: 'Breckenridge', category: category)
   end
 
   it "user sees the current job listed" do

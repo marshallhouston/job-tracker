@@ -9,7 +9,6 @@ describe "user edits an existing job" do
 
   it "user sees the current job listed" do
     visit edit_company_job_path(@company, @job)
-
     expect(page).to have_content(@job.title)
   end
 
@@ -17,6 +16,7 @@ describe "user edits an existing job" do
     visit edit_company_job_path(@company, @job)
 
     fill_in "job[title]", with: "ski guide"
+    select('Outdoors', from: 'job[category_id]')
     click_button "Update"
 
     expect(current_path).to eq(company_job_path(@company, @job))

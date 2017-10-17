@@ -1,15 +1,7 @@
-<% if @company != nil %>
-  All Jobs for <strong><%= @company.name %></strong>
+All Jobs for <strong><%= @company.name %></strong>
 
-  <% @jobs.each do |job| %>
-    <ul><%= job.title %> at <%= job.company.name %></ul>
-  <% end %>
-<% else %>
-
-  All Jobs for <strong><%= @category.title %></strong>
-
-  <% @jobs.each do |job| %>
-    <ul><%= job.title %>
-  <% end %>
-
+<% @jobs.each do |job| %>
+  <li>
+    <%= link_to job.title, company_job_path(job.company, job)%>
+  </li>
 <% end %>

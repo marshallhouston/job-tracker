@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   resources :categories
 
+  resources :jobs, only: :show do
+    resources :comments
+  end
+  
   resources :companies do
     resources :jobs
   end

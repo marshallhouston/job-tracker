@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
   root to: 'companies#index'
 
-  resources :categories, except: :show
-
-  resources :categories, only: :show do
-    resources :jobs, only: [:new, :show, :index]
-  end
+  resources :categories
 
   resources :companies do
     resources :jobs

@@ -24,7 +24,7 @@ describe "user can edit an existing category" do
       fill_in "category[title]", with: 'Education'
       click_button "Update"
 
-      expect(current_path).to eq(category_jobs_path(category1))
+      expect(current_path).to eq(category_path(category1))
       expect(page).to have_content('Education')
       expect(page).to_not have_content('Software')
     end

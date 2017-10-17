@@ -5,8 +5,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    category = Category.find(params[:id])
-    redirect_to category_jobs_path(category)
+    @category = Category.find(params[:id])
+    @jobs = @category.jobs
   end
 
   def edit

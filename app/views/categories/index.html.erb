@@ -1,7 +1,8 @@
 <h3>All Categories</h3>
 
+<ul class='category'>
 <% @categories.each do |category| %>
-  <ul>
     <li><%= category.title %></li>
-  </ul>
+    <%= link_to "Delete", category_path(category), method: "delete" %>
 <% end %>
+</ul>

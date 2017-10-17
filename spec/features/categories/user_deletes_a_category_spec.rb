@@ -15,6 +15,5 @@ describe "user can delete an existing category" do
 
     expect(page).to_not have_content('Software')
     expect(page).to have_content('Sports')
-
   end
 end

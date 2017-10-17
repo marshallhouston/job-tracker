@@ -1,5 +1,15 @@
-All Jobs for <strong><%= @company.name %></strong>
+<% if @company != nil %>
+  All Jobs for <strong><%= @company.name %></strong>
 
-<% @jobs.each do |job| %>
-  <ul><%= job.title %> at <%= job.company.name %></ul>
+  <% @jobs.each do |job| %>
+    <ul><%= job.title %> at <%= job.company.name %></ul>
+  <% end %>
+<% else %>
+
+  All Jobs for <strong><%= @category.title %></strong>
+
+  <% @jobs.each do |job| %>
+    <ul><%= job.title %>
+  <% end %>
+
 <% end %>

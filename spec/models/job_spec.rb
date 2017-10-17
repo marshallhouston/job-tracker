@@ -31,7 +31,7 @@ describe Job do
       it "is valid with a title, level of interest, company, and category" do
         company = Company.new(name: "Turing")
         category = Category.new(title: "Fun")
-        job = Job.new(title: "Developer", level_of_interest: 40, city: "Denver", company: company, category: category)
+        job = Job.new(title: "Developer", description: "Wahoo", level_of_interest: 40, city: "Denver", company: company, category: category)
         expect(job).to be_valid
       end
     end

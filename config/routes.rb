@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :categories
 
+  resources :jobs, only: :index
+  
   resources :jobs, only: :show do
     resources :comments, only: :create
   end

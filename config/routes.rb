@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'companies#index'
+  root to: 'dashboard#index'
+
+  resources :dashboard, only: :index
 
   resources :categories
 

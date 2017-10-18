@@ -5,8 +5,10 @@ class JobsController < ApplicationController
       @company = Company.find(params[:company_id])
       @jobs = @company.jobs
       #redict_to  to the company jobs path?
-    elsif params[:sort]
-      @jobs = Job.sort_by(params)
+    elsif params[:sort] || params[:location]
+      @jobs = Job.filter_by_query(params)
+    else
+      @jobs = Job.all
     end
   end
 

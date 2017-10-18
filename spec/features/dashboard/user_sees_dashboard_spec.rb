@@ -17,8 +17,8 @@ describe "user sees dashboard" do
     @job3 = Job.create!(title: "Sports", level_of_interest: 12, city: "Fort Collins", description: "Wahooo", company: company, category: category)
   end
 
-  scenario "dashboard has information about jobs by level_of_interest" do
-    
+  xscenario "dashboard has information about jobs by level_of_interest" do
+
   end
 
   xscenario "dashboard has information about the top three companies by average level of interest" do

@@ -4,6 +4,14 @@ class Job < ApplicationRecord
   belongs_to :category
   has_many :comments, dependent: :destroy
 
+  def self.filter_by_query(params)
+    if params[:sort]
+      sort_by(params)
+    elsif params[:location]
+      Job.where(city: params[:location])
+    end
+  end
+
   def self.sort_by(params)
     if params[:sort] == "location"
       sort_by_location

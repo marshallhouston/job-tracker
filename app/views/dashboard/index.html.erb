@@ -1,6 +1,16 @@
 <h1>Dashboard!</h1>
 
 <p>Level of interest: # of jobs</p>
-<% @count_of_jobs_by_level_of_interest.each do |k, v| %>
-  <p><%= "#{k}:#{v}" %></p>
+<% @number_of_jobs_by_level_of_interest.each do |interest_level, num_of_companies| %>
+  <p><%= "#{interest_level}:#{num_of_companies}" %></p>
+<% end %>
+
+<p>Top Companies by Job Interest Level</p>
+<% @top_companies_by_avg_level_of_interest.each do |company| %>
+  <li><%= company.name %>: <%= company.average_interest_level %></li>
+<% end %>
+
+<p>City: # of jobs</p>
+<% @number_of_jobs_by_city.each do |city, num_of_companies| %>
+  <p><%= "#{city}:#{num_of_companies}" %></p>
 <% end %>

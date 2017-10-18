@@ -1,1 +1,6 @@
 <h1>Dashboard!</h1>
+
+<p>Level of interest: # of jobs</p>
+<% @count_of_jobs_by_level_of_interest.each do |k, v| %>
+  <p><%= "#{k}:#{v}" %></p>
+<% end %>

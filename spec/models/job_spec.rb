@@ -50,16 +50,25 @@ describe Job do
     end
   end
 
-  xdescribe "Class Methods" do
+  describe "Class Methods" do
     before :each do
+      company = Company.new(name: "Turing")
       category = Category.new(title: "Fun")
-      @job1 = Job.create!(title: "Software", level_of_interest: 70, city: "Denver", description: "Wahooo", category: category)
-      @job2 = Job.create!(title: "Sports", level_of_interest: 70, city: "Denver", description: "Wahooo", category: category)
-      @job3 = Job.create!(title: "Sports", level_of_interest: 70, city: "Fort Collins", description: "Wahooo", category: category)
+      @job1 = Job.create!(title: "Software", level_of_interest: 60, city: "Boulder", description: "Wahooo", company: company, category: category)
+      @job2 = Job.create!(title: "Sports", level_of_interest: 70, city: "Denver", description: "Wahooo", company: company, category: category)
+      @job3 = Job.create!(title: "Sports", level_of_interest: 10, city: "Fort Collins", description: "Wahooo", company: company, category: category)
     end
 
-    xit '#sort_by_location' do
-      
+    it '#sort_by_location' do
+      sorted = Job.sort_by_location
+      expect(sorted.first.city).to eq(@job1.city)
+      expect(sorted.last.city).to eq(@job3.city)
+    end
+
+    it '#sort_by_level_of_interest' do
+      sorted = Job.sort_by_level_of_interest
+      expect(sorted.first.level_of_interest).to eq(@job2.level_of_interest)
+      expect(sorted.last.level_of_interest).to eq(@job3.level_of_interest)
     end
 
   end

@@ -4,10 +4,10 @@ class Job < ApplicationRecord
   belongs_to :category
   has_many :comments, dependent: :destroy
 
-  def sort_by(params)
-    if params[:sort] = :location
+  def self.sort_by(params)
+    if params[:sort] == "location"
       sort_by_location
-    elsif params[:sort] = :level_of_interest
+    elsif params[:sort] == "interest"
       sort_by_level_of_interest
     end
   end
@@ -21,6 +21,4 @@ class Job < ApplicationRecord
     group(:id)
     .order('level_of_interest DESC')
   end
-
-  #pass sort into this model. if params[:sort] = :location, a
 end

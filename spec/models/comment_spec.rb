@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe Comment do
   describe "validations" do
-    context "invalid comments" do
-      it "is invalid wiithout content" do
+    context "invalid comments"
+      it "is invalid without content" do
         company = Company.new(name: "Turing")
         category = Category.new(title: "Fun")
         job = Job.new(title: "Developer", description: "Wahoo", level_of_interest: 40, city: "Denver", company: company, category: category)
@@ -17,9 +17,9 @@ describe Comment do
 
         expect(comment).to_not be_valid
       end
-    end
+  end
 
-    context "valid comments" do
+    context "valid comments"
       it "is valid with content, job_id, and timestamps" do
         company = Company.new(name: "Turing")
         category = Category.new(title: "Fun")
@@ -30,8 +30,6 @@ describe Comment do
         expect(comment).to respond_to(:created_at)
         expect(comment).to respond_to(:updated_at)
       end
-    end
-  end
 
   describe "relationships" do
     it "responds to job" do

@@ -13,7 +13,7 @@ describe "user can delete an existing category" do
       first(:link, "Delete").click
     end
 
-    expect(page).to_not have_content('Software')
     expect(page).to have_content('Sports')
+    expect(page).to_not have_content('Software')
   end
 end

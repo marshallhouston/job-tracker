@@ -4,8 +4,8 @@ class JobsController < ApplicationController
     if params[:company_id]
       @company = Company.find(params[:company_id])
       @jobs = @company.jobs
-    else
-      @jobs = Job.all
+    elsif params[:sort] = :location
+      @jobs = Job.sort_by_location
     end
   end
 
@@ -63,6 +63,6 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id)
+    params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id, :sort)
   end
 end

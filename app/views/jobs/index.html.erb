@@ -1,24 +1,13 @@
-<% if @company.nil? %>
-  <table>
-    <tr>
-      <th>City</th>
-      <th>Job</th>
-    </tr>
-
-    <% @jobs.sort_by_location.each do |job| %>
-    <tr>
-      <td><%= job.city %></td>
-      <td><%= job.title %></td>
-    </tr>
-    <% end %>
-  </table>
-
-<% else %>
-  All Jobs for <strong><%= @company.name %></strong>
+<table>
+  <tr>
+    <th>City</th>
+    <th>Job</th>
+  </tr>
 
   <% @jobs.each do |job| %>
-    <li>
-      <%= link_to job.title, job_path(job)%>
-    </li>
+  <tr>
+    <td><%= job.city %></td>
+    <td><%= link_to job.title, job_path(job) %></td>
+  </tr>
   <% end %>
-<% end %>
+</table>

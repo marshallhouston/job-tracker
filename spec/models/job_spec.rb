@@ -49,4 +49,18 @@ describe Job do
       expect(job).to respond_to(:category)
     end
   end
+
+  xdescribe "Class Methods" do
+    before :each do
+      category = Category.new(title: "Fun")
+      @job1 = Job.create!(title: "Software", level_of_interest: 70, city: "Denver", description: "Wahooo", category: category)
+      @job2 = Job.create!(title: "Sports", level_of_interest: 70, city: "Denver", description: "Wahooo", category: category)
+      @job3 = Job.create!(title: "Sports", level_of_interest: 70, city: "Fort Collins", description: "Wahooo", category: category)
+    end
+
+    xit '#sort_by_location' do
+      
+    end
+
+  end
 end

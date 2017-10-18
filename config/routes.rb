@@ -6,13 +6,13 @@ Rails.application.routes.draw do
   resources :jobs, only: :show do
     resources :comments, only: :create
   end
-  
-  resources :companies do
-    resources :jobs
+
+  resources :companies, only: [:show, :new] do
+    resources :contacts, only: :create
   end
 
-  resources :companies, only: :show do
-    resources :contacts, only: :create
+  resources :companies, except: :show do
+    resources :jobs
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

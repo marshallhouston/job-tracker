@@ -2,7 +2,7 @@ All Jobs for <strong><%= @company.name %></strong>
 
 <% @company.jobs.each do |job| %>
   <ul><%= link_to job.title, job_path(job) %></ul>
-  
+
 <% end %>
 
 <%= render partial: '/contacts/form' %>

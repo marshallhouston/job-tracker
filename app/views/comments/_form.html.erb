@@ -1,7 +1,9 @@
-<h3>Post a Comment</h3>
-<%= form_for [@job, @comment] do |f| %>
-    <%= f.label :content, "Your Comment" %><br>
-    <%= f.text_area :content %>
+<section class='form'>
+  <h3>Post a Comment</h3>
+  <%= form_for [@job, @comment] do |f| %>
+      <%= f.label :content, "Your Comment" %><br>
+      <%= f.text_area :content %><br>
 
-    <%= f.submit%>
-<% end %>
+      <%= f.submit%>
+  <% end %>
+</section>

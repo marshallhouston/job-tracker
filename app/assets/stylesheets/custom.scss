@@ -9,7 +9,7 @@ $custom_font: palatino;
 body {
   display: flex;
   flex-direction: column;
-  width: 700px;
+  width: 1000px;
   color: $color1;
   padding: 15px;
   margin: 0px auto 0px auto;
@@ -24,6 +24,7 @@ body {
   .nav a {
     padding: 15px;
   }
+
   h1, h2, h3, h4, h5, h6, th {
     color: $color5;
   }
@@ -86,12 +87,17 @@ body {
     padding: 16px;
   }
 
-  li.category {
+  li.category{
     width: 235px;
     height: 172px;
     padding: 2px;
   }
 
+  li.cards {
+    width: 150px;
+    height: 125px;
+    padding: 10px;
+  }
   .dashboard {
     display: flex;
     flex-direction: column;
@@ -100,4 +106,27 @@ body {
     border-top: 2px solid $color1;
     border-bottom: 2px solid $color1;
   }
+
+  ul.job-show {
+    padding: 5px;
+  }
+
+  div.comments {
+    padding-left: 106px;
+    margin-top: 15px;
+  }
+
+  div.contacts {
+    color: $color5;
+  }
+
+  .job-data *{
+    margin: 10px;
+    text-align: center;
+  }
+
+  tbody.job-data {
+    margin-left: 10px;
+  }
+
 }

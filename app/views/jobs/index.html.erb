@@ -1,19 +1,21 @@
 <h1>Jobs</h1>
 
-<table>
-  <tr>
-    <th>City</th>
-    <th>Job</th>
-    <th>Level of Interest</th>
-    <th>Company</th>
-  </tr>
+<main class='job-data'>
+  <table>
+    <tr>
+      <th>City</th>
+      <th>Job</th>
+      <th>Level of Interest</th>
+      <th>Company</th>
+    </tr>
 
-  <% @jobs.each do |job| %>
-  <tr>
-    <td><%= job.city %></td>
-    <td><%= link_to job.title, job_path(job) %></td>
-    <td><%= job.level_of_interest %></td>
-    <td><%= link_to job.company.name, company_path(job.company) %></td>
-  </tr>
-  <% end %>
-</table>
+    <% @jobs.each do |job| %>
+    <tr>
+      <td><%= job.city %></td>
+      <td><%= link_to job.title, job_path(job) %></td>
+      <td><%= job.level_of_interest %></td>
+      <td><%= link_to job.company.name, company_path(job.company) %></td>
+    </tr>
+    <% end %>
+  </table>
+</main>

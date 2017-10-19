@@ -3,7 +3,7 @@
 <section class='dashboard'>
   <h3>Level of interest: # of jobs</h3>
   <% @number_of_jobs_by_level_of_interest.each do |interest_level, num_of_companies| %>
-    <p><%= "#{interest_level}: #{num_of_companies}" %></p>
+    <p class='display'><%= "#{interest_level}: #{num_of_companies}" %></p>
   <% end %>
 </section>
 
@@ -17,6 +17,6 @@
 <section class='dashboard'>
   <h3>City: # of jobs</h3>
   <% @number_of_jobs_by_city.each do |city, num_of_companies| %>
-    <p><%= "#{city}: #{num_of_companies}" %></p>
+    <p class='display'><%= "#{city}: #{num_of_companies}" %></p>
   <% end %>
 </section>

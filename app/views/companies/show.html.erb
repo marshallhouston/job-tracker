@@ -2,9 +2,11 @@
 
 <ul>
 <% @company.jobs.each do |job| %>
-  <li class='cards'><%= link_to job.title, job_path(job) %></li>
+  <li class='cards'><%= link_to job.title, job_path(job) %>
+  </li>
 <% end %>
 </ul>
 
+<h5> <%= link_to "Create a new job at #{@company.name}", new_company_job_path(@company) %>  </h5>
 <%= render partial: '/contacts/form' %>
 <div class='contacts'><%= render partial: 'companies/contact', collection: @company.contacts %></div>

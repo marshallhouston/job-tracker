@@ -10,8 +10,8 @@
   <nav class='nav'>
     <%= link_to "Home", dashboard_index_path %>
     <%= link_to "Companies", companies_path %>
-    <%= link_to "Jobs", jobs_path %>
     <%= link_to "Categories", categories_path %>
+    <%= link_to "Jobs", jobs_path %>
   </nav>
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: name %>

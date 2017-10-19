@@ -1,0 +1,96 @@
+$color1:  #333333;
+$color2:  #643173;
+$color3:  #7D5BA6;
+$color4:  #86A59C;
+$color5:  #89CE94;
+$color6:  #A2E8DD;
+$custom_font: palatino;
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  color: $color1;
+  padding: 15px;
+  margin: 0px auto 0px auto;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+
+  .nav {
+    padding: 10px;
+    border-bottom: 2px solid $color1;
+  }
+
+  .nav a {
+    padding: 15px;
+  }
+  h1, h2, h3, h4, h5, h6, th {
+    color: $color5;
+  }
+
+  a {
+    text-decoration: none;
+    color: $color4;
+  }
+
+  a:hover, a:visited:hover {
+    color: $color2;
+  }
+
+  a:visited {
+    color: $color4;
+  }
+
+  section {
+    width: 400px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form section {
+    margin: 10px;
+  }
+  .new_contact {
+    margin: 10px auto 10px auto;
+  }
+
+  form#new_contact * {
+    margin: 19px;
+  }
+
+  ul *{
+    text-align: center;
+    padding: 10px 10px;
+  }
+
+  .display {
+    display: inline;
+    text-align: center;
+  }
+
+  li {
+    background: $color1;
+    border: 2px solid $color2;
+    border-radius: 5px;
+    list-style-type: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  li.company, li.category {
+    width: 199px;
+  }
+
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+    flex-wrap: wrap;
+    border-top: 2px solid $color1;
+    border-bottom: 2px solid $color1;
+  }
+}

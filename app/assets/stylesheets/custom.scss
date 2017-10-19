@@ -64,7 +64,7 @@ body {
 
   ul *{
     text-align: center;
-    padding: 10px 10px;
+    padding: 2px 10px;
   }
 
   .display {
@@ -81,8 +81,15 @@ body {
     margin-bottom: 10px;
   }
 
-  li.company, li.category {
+  li.company {
     width: 199px;
+    padding: 16px;
+  }
+
+  li.category {
+    width: 235px;
+    height: 172px;
+    padding: 2px;
   }
 
   .dashboard {

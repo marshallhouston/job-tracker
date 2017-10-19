@@ -7,7 +7,7 @@ describe "user can edit an existing category" do
       Category.create!(title: 'Sports')
 
       visit categories_path
-      within('.category') do
+      within('li.category:first-child') do
         first(:link, "Edit").click
       end
 

@@ -9,7 +9,7 @@ describe "user can delete an existing category" do
   end
 
   scenario "user can delete a category" do
-    within('.category') do
+    within('li.category:first-child') do
       first(:link, "Delete").click
     end
 
